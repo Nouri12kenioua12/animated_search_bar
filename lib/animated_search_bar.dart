@@ -95,7 +95,6 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
     return GestureDetector(
       onTap: () {
         if (!_isSearch.value) {
-          widget.onOpen?.call();
           _isSearch.value = true;
           _fnSearch.requestFocus();
         }
@@ -205,7 +204,11 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
               } else {
                 _isSearch.value = !_isSearch.value;
                 if (!_isSearch.value) widget.onClose?.call();
-                if (_isSearch.value) _fnSearch.requestFocus();
+                if (_isSearch.value) {
+                  widget.onOpen?.call();
+                  _fnSearch.requestFocus();
+
+                }
               }
             },
           ),

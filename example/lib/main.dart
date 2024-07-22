@@ -36,6 +36,9 @@ class _MyAppState extends State<MyApp> {
                 hintStyle: TextStyle(color: Colors.white70),
                 border: InputBorder.none,
               ),
+              onOpen: () {
+                print("open 00000000000000");
+              },
               onChanged: (value) {
                 debugPrint('value on Change');
                 setState(() {
@@ -55,6 +58,9 @@ class _MyAppState extends State<MyApp> {
             children: [
               AnimatedSearchBar(
                 label: 'Search Something Here',
+                onOpen: () {
+                  print("open 00000000000000");
+                },
                 onChanged: (value) {
                   debugPrint('value on Change');
                   setState(() {
