@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: AnimatedSearchBar(
               label: 'Search Something Here',
+              labelAlignment: Alignment.center,
               controller: _controller,
               labelStyle: const TextStyle(fontSize: 16),
               searchStyle: const TextStyle(color: Colors.white),
