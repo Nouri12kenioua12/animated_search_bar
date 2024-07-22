@@ -103,6 +103,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
+            // flex: 2,²/
             child: AnimatedSwitcher(
               duration: widget.animationDuration,
               transitionBuilder: (Widget child, Animation<double> animation) {
@@ -169,8 +170,8 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
               ),
             ),
           ),
-          IconButton(
-            icon: AnimatedSwitcher(
+          InkWell(
+            child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 350),
               transitionBuilder: (Widget child, Animation<double> animation) {
                 final inAnimation = Tween<Offset>(
@@ -197,7 +198,7 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
                     value ? widget.closeIcon : widget.searchIcon,
               ),
             ),
-            onPressed: () {
+            onTap: () {
               if (_isSearch.value && _conSearch.text.isNotEmpty) {
                 _conSearch.clear();
                 widget.onChanged?.call(_conSearch.text);
@@ -207,7 +208,6 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> {
                 if (_isSearch.value) {
                   widget.onOpen?.call();
                   _fnSearch.requestFocus();
-
                 }
               }
             },

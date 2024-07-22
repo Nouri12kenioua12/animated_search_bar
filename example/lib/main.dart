@@ -20,8 +20,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: AnimatedSearchBar(
-              label: 'Search Something Here',
+          leadingWidth: double.infinity,
+          leading: AnimatedSearchBar(
+              label: 'client',
               labelAlignment: Alignment.center,
               controller: _controller,
               labelStyle: const TextStyle(fontSize: 16),
@@ -53,11 +54,12 @@ class _MyAppState extends State<MyApp> {
               }),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(0),
           child: Column(
             children: [
               AnimatedSearchBar(
-                label: 'Search Something Here',
+                label: 'client',
+                labelAlignment: Alignment.center,
                 onOpen: () {
                   print("open 00000000000000");
                 },
